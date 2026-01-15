@@ -13,17 +13,18 @@
 
 @theme {
     --font-pri: 'Noto Sans', Roboto, 'Helvetica', 'Arial', 'sans-serif';
-    --font-sec: 'Raleway', 'Helvetica', 'Arial', 'sans-serif';
+    --font-sec: 'Poppins', 'Helvetica', 'Arial', 'sans-serif';
     --font-noto-serif: 'Noto Serif', 'Helvetica', 'Arial', 'sans-serif';
 
     --color-key: #1CE8B8;
-    --color-primary: #00696E;
+    --color-primary: #3162AF;
     
     --color-on-primary: #FFFFFF;
     --color-primary-container: #9CF0F6;
     --color-on-primary-container: #004F53;
 
-    --color-surface-default: #F4FAFB;
+    --color-surface-default: #EFF3FB;
+    
     --color-surface-dim: #D5DBDB;
     --color-surface-bright: #F4FAFB;
     --color-surface-container-lowest: #FFFFFF;
@@ -81,11 +82,11 @@
     }
 
     @font-face {
-        font-family: 'Raleway';
+        font-family: 'Poppins';
         font-style: normal;
         font-weight: 400;
         font-display: swap;
-        src: url("../font/Raleway/Raleway-VariableFont_wght.ttf");
+        src: url("../font/poppins/Poppins-VariableFont_wght.ttf");
     }
 
     @font-face {
@@ -157,50 +158,10 @@
     .link {
         @apply hover:text-on-primary-container transition-colors ease-linear duration-75;
     }
-
-    .popupContainer {
-        @apply hidden place-items-center justify-center fixed top-0 left-0 w-full h-full bg-black/50 z-10;
-    }
-    .popupImg {
-        @apply w-auto h-auto max-w-svw max-h-svh;
-    }
-    .closePopup {
-        @apply grid place-items-center absolute w-12 h-12 top-4 right-4 text-white bg-transparent rounded-full cursor-pointer hover:bg-white/20;
-    }
-    .closePopupIcon {
-        @apply text-4xl;
-    }
-    .imgWithPopup {
-        @apply w-full h-full max-w-80 max-h-80 object-cover object-center cursor-pointer;
-    }
-
-    .headerNavDesktop {
-        @apply  hidden items-center right-0 overflow-hidden gap-2 
-                lg:flex lg:flex-row lg:ml-auto lg:relative lg:top-0  lg:shadow-none 
-                lg:border-none lg:bg-transparent lg:py-0 lg:w-min
-    }
-    .headerNavLinkDesktop {
-        @apply hover:bg-surface-bright transition-colors ease-linear duration-75 break-keep px-8 py-4 w-max rounded-full whitespace-nowrap;
-    }
-    .headerNavMobile {
-        @apply  absolute overflow-hidden right-0 flex flex-col shadow-top-md border-t border-b border-pri top-20 bg-surface-container-highest
-                flex-wrap items-center text-base justify-center py-4
-                lg:hidden
-                ease-in-out duration-300 w-0
-    }
-    .headerNavMobileLink {
-        @apply flex items-center justify-center w-full px-4 py-16 hover:bg-pri-o-20 hover:text-primary font-pri text-2xl font-bold whitespace-nowrap;
-    }
-
-    .footerNav {
-        @apply container px-4 py-16 mx-auto flex items-center xl:flex-row flex-col relative;
-    }
-
-    .indexImg {
-        @apply h-64 md:h-96 max-w-3xs md:max-w-svh;
-    }
-
-    .bookTile {
-        @apply h-full border border-primary bg-surface-container rounded-xl overflow-hidden max-w-96
+    .textfield-default {
+        @apply 
+            border-b border-black rounded-t-md px-4 py-2 font-sec text-on-surface bg-white
+            focus:outline-none focus:bg-surface-container-highest 
+            hover:bg-surface-container-high ;
     }
 }

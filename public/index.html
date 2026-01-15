@@ -7,17 +7,32 @@
 
     <script src="./js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="css/tailwind.css">
+    <link rel="stylesheet" type="text/css" href="css/print.css">
 </head>
-<body>
+<body class="m-8 bg-surface-default">
     <div class="flex flex-row justify-between">
-        <h1>Neuinstallation System</h1>
-        <p id="date">15.01.2026</p>
+        <h1 class="text-2xl">Neuinstallation System</h1>
+        <!-- <p id="date">15.01.2026</p> -->
     </div>
-    <div class="flex flex-row">
+    <div class="flex gap-2 flex-row">
         <h4>Computername:</h4>
-        <input type="text" id="computername" />
+        <input type="text" class="textfield-default" id="computername">
     </div>
-    
-    <button id="exportBtn">Exportieren</button>
+    <div class="flex gap-2">
+        <div id="checkbox">
+            <span class="material-symbols-outlined">check_box_outline_blank</span>
+            <span class="material-symbols-outlined hidden">select_check_box</span>
+            <input type="checkbox" name="" id="" class="hidden">
+        </div>
+        <h4>Grundinstallation Betriebssystem</h4>
+    </div>
+
+    <!-- <canvas id="signature-pad" width="500" height="200" class="border border-red-600"></canvas> -->
+
+    <!-- <div class="controls">
+        <button class="clear-btn" id="clear">Löschen</button>
+    </div> -->
+    <br><br><br><br>
+    <button id="exportBtn" class="button-pri">Exportieren</button>
 </body>
 </html>
