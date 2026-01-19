@@ -21,11 +21,11 @@
     <div class="flex mb-4">
         <div class="textfieldContainer">
             <h4>Benutzername:</h4>
-            <input type="text" class="textfield" id="username">
+            <input type="text" class="textfield" id="benutzername">
         </div>
         <div class="textfieldContainer ml-8">
             <h4>Passwort:</h4>
-            <input type="text" class="textfield" id="password">
+            <input type="text" class="textfield" id="passwort">
         </div>
     </div>
     <!-- Container für dynamische Checkboxen -->
@@ -34,11 +34,11 @@
     <div class="flex mb-4 mt-4">
         <div class="textfieldContainer">
             <h4>Bezeichnung:</h4>
-            <input type="text" class="textfield" id="username">
+            <input type="text" class="textfield" id="bezeichniung">
         </div>
         <div class="textfieldContainer ml-8">
             <h4>Seriennummer:</h4>
-            <input type="text" class="textfield" id="password">
+            <input type="text" class="textfield" id="seriennummer">
         </div>
     </div>
     <div class="textareaContainer mb-2">
@@ -47,13 +47,14 @@
     </div>
 
     <div class="flex items-center w-full gap-2 mt-8">
-        <h4 class="text-xl font-medium">Unterschrift:</h4>
-        <canvas id="signature-pad" width="330" height="45" class="signature-pad cursor-crosshair"></canvas>
+        <h4 class="text-xl font-medium">Durchgeführt:</h4>
+        <input type="text" class="textfield" id="durchgefuehrt">
+        <!-- <canvas id="signature-pad" width="330" height="45" class="signature-pad cursor-crosshair"></canvas>
         <div class="signature-controls">
             <button class="signatureClear" id="clear">
                 <span  class="material-symbols-outlined">delete</span>
             </button>
-        </div>
+        </div> -->
     </div>
     <button id="exportBtn" class="button-pri exportBtn mt-8">Exportieren</button>
 </body>
