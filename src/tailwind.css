@@ -12,8 +12,8 @@
 */
 
 @theme {
-    --font-pri: 'Noto Sans', Roboto, 'Helvetica', 'Arial', 'sans-serif';
-    --font-sec: 'Poppins', 'Helvetica', 'Arial', 'sans-serif';
+    --font-pri: 'Poppins', Roboto, 'Helvetica', 'Arial', 'sans-serif';
+    --font-sec: 'Noto Sans', 'Helvetica', 'Arial', 'sans-serif';
     --font-noto-serif: 'Noto Serif', 'Helvetica', 'Arial', 'sans-serif';
 
     --color-key: #1CE8B8;
@@ -69,7 +69,7 @@
     @font-face {
         font-family: 'Noto Sans';
         font-style: normal;
-        font-weight: 600;
+        font-weight: 400;
         font-display: swap;
         src: url("../font/Noto_Sans/NotoSans-VariableFont_wdth,wght.ttf");
     }
@@ -92,7 +92,7 @@
     @font-face {
         font-family: 'Noto Serif';
         font-style: bold;
-        font-weight: 800;
+        font-weight: 400;
         font-display: swap;
         src: url("../font/Noto_Serif/NotoSerif-VariableFont_wdth,wght.ttf");
     }
@@ -158,10 +158,49 @@
     .link {
         @apply hover:text-on-primary-container transition-colors ease-linear duration-75;
     }
-    .textfield-default {
+
+    .textfieldContainer {
+        @apply flex flex-row gap-2 items-center select-none w-max;
+    }
+    .textfieldContainer h4 {
+        @apply text-xl font-medium;
+    }
+    .textfield {
         @apply 
-            border-b border-black rounded-t-md px-4 py-2 font-sec text-on-surface bg-white
+            border-b border-black rounded-t-md px-4 py-2 text-on-surface bg-white font-noto-serif text-xl
             focus:outline-none focus:bg-surface-container-highest 
             hover:bg-surface-container-high ;
+    }
+
+    .textareaContainer {
+        @apply flex flex-col gap-2 w-max;
+    }
+    .textareaContainer h4 {
+        @apply text-xl font-medium;
+    }
+
+    .pcbit-textarea {
+        @apply 
+            border-b border-black rounded-t-md px-4 py-2 text-on-surface bg-white font-noto-serif text-lg resize-none w-xl
+            focus:outline-none focus:bg-surface-container-highest 
+            hover:bg-surface-container-high ;
+    }
+
+    .checkboxContainer {
+        @apply flex gap-2 items-center cursor-pointer select-none w-max;
+    }
+    .checkboxContainer:hover .checkbox {
+        @apply bg-surface-container-high;
+    }
+    .checkbox {
+        @apply 
+            inline-flex items-center rounded-sm; 
+    }
+
+    .signature-pad {
+        @apply border-b border-on-surface bg-surface-container-lowest rounded-t-md;
+    }
+    .signatureClear {
+        @apply cursor-pointer hover:bg-surface-container-high rounded-full p-2 flex items-center justify-center;
     }
 }
