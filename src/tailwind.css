@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+:root {
+    --color-pri-rgb: 0, 105, 110;
+        /* HEX:  #156B54 */
+    --color-sec-rgb: 120, 107, 87;
+        /* HEX:  #786B57 */
+}       
+
+/* 
+    Apply default style
+*/
+
+@theme {
+    --font-pri: 'Poppins', Roboto, 'Helvetica', 'Arial', 'sans-serif';
+    --font-sec: 'Noto Sans', 'Helvetica', 'Arial', 'sans-serif';
+    --font-noto-serif: 'Noto Serif', 'Helvetica', 'Arial', 'sans-serif';
+
+    --color-key: #1CE8B8;
+    --color-primary: #3162AF;
+    
+    --color-on-primary: #FFFFFF;
+    --color-primary-container: #9CF0F6;
+    --color-on-primary-container: #004F53;
+
+    --color-surface-default: #EFF3FB;
+    
+    --color-surface-dim: #D5DBDB;
+    --color-surface-bright: #F4FAFB;
+    --color-surface-container-lowest: #FFFFFF;
+    --color-surface-container-low: #E9EFEF;
+    --color-surface-container: #E9EFEF;
+    --color-surface-container-high: #E3E9E9;
+    --color-surface-container-highest: #DDE4E4;
+    --color-on-surface: #161D1D;
+
+    --color-pri: rgba(var(--color-pri-rgb), 1);
+    --color-pri-o-90: rgba(var(--color-pri-rgb), 0.9);
+    --color-pri-o-80: rgba(var(--color-pri-rgb), 0.8);
+    --color-pri-o-70: rgba(var(--color-pri-rgb), 0.7);
+    --color-pri-o-60: rgba(var(--color-pri-rgb), 0.6);
+    --color-pri-o-50: rgba(var(--color-pri-rgb), 0.5);
+    --color-pri-o-40: rgba(var(--color-pri-rgb), 0.4);
+    --color-pri-o-30: rgba(var(--color-pri-rgb), 0.3);
+    --color-pri-o-20: rgba(var(--color-pri-rgb), 0.2);
+    --color-pri-o-10: rgba(var(--color-pri-rgb), 0.1);    
+
+    --color-sec: rgba(var(--color-sec-rgb), 1);
+    --color-sec-o-90: rgba(var(--color-sec-rgb), 0.9);
+    --color-sec-o-80: rgba(var(--color-sec-rgb), 0.8);
+    --color-sec-o-70: rgba(var(--color-sec-rgb), 0.7);
+    --color-sec-o-60: rgba(var(--color-sec-rgb), 0.6);
+    --color-sec-o-50: rgba(var(--color-sec-rgb), 0.5);
+    --color-sec-o-40: rgba(var(--color-sec-rgb), 0.4);
+    --color-sec-o-30: rgba(var(--color-sec-rgb), 0.3);
+    --color-sec-o-20: rgba(var(--color-sec-rgb), 0.2);
+    --color-sec-o-10: rgba(var(--color-sec-rgb), 0.1);
+
+    --shadow-top-md:  0 -4px 6px -1px rgb(0 0 0 / 0.1);
+
+    --aspect-book: 300 / 425;
+}
+
+@layer base {
+
+    /*
+        Import Fonts
+    */
+    @font-face {
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../font/Noto_Sans/NotoSans-VariableFont_wdth,wght.ttf");
+    }
+    @font-face {
+        font-family: 'Noto Sans';
+        font-style: bold;
+        font-weight: 800;
+        font-display: swap;
+        src: url("../font/Noto_Sans/NotoSans-VariableFont_wdth,wght.ttf");
+    }
+
+    @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../font/poppins/Poppins-VariableFont_wght.ttf");
+    }
+
+    @font-face {
+        font-family: 'Noto Serif';
+        font-style: bold;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../font/Noto_Serif/NotoSerif-VariableFont_wdth,wght.ttf");
+    }
+
+    /*
+        Import Icons
+    */
+    @font-face {
+        font-family: 'Material Symbols Outlined';
+        font-style: normal;
+        src: url("../font/icons/MaterialSymbolsOutlined.woff2") format('woff2');
+    }
+    .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined' !important;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+    }
+    /* 
+        Change icons: 
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+    */
+
+    /* 
+        Style text
+    */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-pri text-on-surface;
+    }
+
+    p {
+        @apply font-sec text-on-surface;
+    }
+}
+
+
+@layer components {
+    .button-pri {
+        @apply inline-flex border-0 py-4 px-8 focus:outline-none text-lg text-on-primary font-pri bg-primary 
+        hover:bg-pri-o-90 transition duration-100 ease-linear cursor-pointer rounded-full;
+    }
+
+    .button-sec {
+        @apply inline-flex border-0 py-2 px-6 focus:outline-none text-lg font-pri bg-pri-o-10 hover:bg-pri-o-20 transition duration-100 ease-linear cursor-pointer;
+    }
+
+    .link {
+        @apply hover:text-on-primary-container transition-colors ease-linear duration-75;
+    }
+
+    .textfieldContainer {
+        @apply flex flex-row gap-2 items-center select-none w-max;
+    }
+    .textfieldContainer h4 {
+        @apply text-xl font-medium;
+    }
+    .textfield {
+        @apply 
+            border-b border-black rounded-t-md px-4 py-2 text-on-surface bg-white font-noto-serif text-xl
+            focus:outline-none focus:bg-surface-container-highest 
+            hover:bg-surface-container-high ;
+    }
+
+    .textareaContainer {
+        @apply flex flex-col gap-2 w-max;
+    }
+    .textareaContainer h4 {
+        @apply text-xl font-medium;
+    }
+
+    .pcbit-textarea {
+        @apply 
+            border-b border-black rounded-t-md px-4 py-2 text-on-surface bg-white font-noto-serif text-lg resize-none w-xl
+            focus:outline-none focus:bg-surface-container-highest 
+            hover:bg-surface-container-high ;
+    }
+
+    .checkboxContainer {
+        @apply flex gap-2 items-center cursor-pointer select-none w-max;
+    }
+    .checkboxContainer:hover .checkbox {
+        @apply bg-surface-container-high;
+    }
+    .checkbox {
+        @apply 
+            inline-flex items-center rounded-sm; 
+    }
+
+    .signature-pad {
+        @apply border-b border-on-surface bg-surface-container-lowest rounded-t-md;
+    }
+    .signatureClear {
+        @apply cursor-pointer hover:bg-surface-container-high rounded-full p-2 flex items-center justify-center;
+    }
+}

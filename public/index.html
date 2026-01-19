@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuinsallation System</title>
+
+    <script src="./js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/tailwind.css">
+    <link rel="stylesheet" type="text/css" href="css/print.css">
+</head>
+<body class="m-8 bg-surface-default">
+    <div class="flex flex-row justify-between">
+        <h1 class="text-2xl font-medium mb-4">Neuinstallation System</h1>
+        <p id="date">15.01.2026</p>
+    </div>
+    <div class="textfieldContainer mb-2">
+        <h4>Computername:</h4>
+        <input type="text" class="textfield" id="computername">
+    </div>
+    <div class="flex mb-4">
+        <div class="textfieldContainer">
+            <h4>Benutzername:</h4>
+            <input type="text" class="textfield" id="username">
+        </div>
+        <div class="textfieldContainer ml-8">
+            <h4>Passwort:</h4>
+            <input type="text" class="textfield" id="password">
+        </div>
+    </div>
+    <!-- Container für dynamische Checkboxen -->
+    <div id="checkboxesContainer" class="flex flex-col gap-1"></div>
+
+    <div class="flex mb-4 mt-4">
+        <div class="textfieldContainer">
+            <h4>Bezeichnung:</h4>
+            <input type="text" class="textfield" id="username">
+        </div>
+        <div class="textfieldContainer ml-8">
+            <h4>Seriennummer:</h4>
+            <input type="text" class="textfield" id="password">
+        </div>
+    </div>
+    <div class="textareaContainer mb-2">
+        <h4>Bemerkung:</h4>
+        <textarea class="pcbit-textarea" name="" id=""></textarea>
+    </div>
+
+    <div class="flex items-center w-full gap-2 mt-8">
+        <h4 class="text-xl font-medium">Unterschrift:</h4>
+        <canvas id="signature-pad" width="330" height="45" class="signature-pad cursor-crosshair"></canvas>
+        <div class="signature-controls">
+            <button class="signatureClear" id="clear">
+                <span  class="material-symbols-outlined">delete</span>
+            </button>
+        </div>
+    </div>
+    <button id="exportBtn" class="button-pri exportBtn mt-8">Exportieren</button>
+</body>
+
+
+</html>
